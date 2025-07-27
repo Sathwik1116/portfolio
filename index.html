@@ -5,25 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sathwik Reddy Muppa | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
   <style>
+    :root {
+      --bg: #f4f4f4;
+      --text: #333;
+      --card: #ffffff;
+      --accent: #2b2d42;
+      --button: #ef233c;
+    }
+    body.dark-mode {
+      --bg: #121212;
+      --text: #f4f4f4;
+      --card: #1e1e1e;
+      --accent: #edf2f4;
+      --button: #ff6b6b;
+    }
     * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif;}
-    body {background-color: #f4f4f4; color: #333; line-height: 1.6;}
-    header {background-color: #2b2d42; color: #fff; padding: 2rem 1rem; text-align: center;}
+    body {background-color: var(--bg); color: var(--text); line-height: 1.6; transition: all 0.3s ease;}
+    header {background-color: var(--accent); color: #fff; padding: 2rem 1rem; text-align: center;}
     header h1 {font-size: 2.5rem;}
+    .theme-toggle {position: absolute; top: 20px; right: 20px; background: var(--button); color: white; border: none; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer;}
     nav {background-color: #8d99ae; display: flex; justify-content: center; padding: 1rem; flex-wrap: wrap;}
     nav a {color: white; text-decoration: none; margin: 0.5rem 1rem; font-weight: 500;}
     section {padding: 2rem 4rem;}
-    h2 {color: #2b2d42; margin-bottom: 1rem;}
-    .card {background: white; padding: 1.5rem; margin-bottom: 1.5rem; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);}
+    h2 {color: var(--accent); margin-bottom: 1rem;}
+    .card {background: var(--card); padding: 1.5rem; margin-bottom: 1.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.3s ease;}
+    .card:hover {transform: translateY(-5px);}
     ul {list-style: none; padding-left: 0;}
     ul li {margin-bottom: 0.5rem;}
     .contact a {color: #1d3557; text-decoration: none; font-weight: 500;}
-    footer {background: #2b2d42; color: white; text-align: center; padding: 1rem; margin-top: 2rem;}
-    .btn {background: #ef233c; color: white; padding: 0.7rem 1.5rem; border: none; border-radius: 5px; text-decoration: none; display: inline-block; margin-top: 1rem;}
+    footer {background: var(--accent); color: white; text-align: center; padding: 1rem; margin-top: 2rem;}
+    .btn {background: var(--button); color: white; padding: 0.7rem 1.5rem; border: none; border-radius: 5px; text-decoration: none; display: inline-block; margin-top: 1rem; transition: background 0.3s ease;}
     .btn:hover {background: #d90429;}
   </style>
 </head>
 <body>
+  <button class="theme-toggle" onclick="document.body.classList.toggle('dark-mode')">Toggle Theme</button>
+
   <header>
     <h1>Sathwik Reddy Muppa</h1>
     <p>Aspiring AI/ML Engineer | Data Science Enthusiast | Software Developer</p>
@@ -37,7 +56,7 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <section id="about">
+  <section id="about" data-aos="fade-up">
     <div class="card">
       <h2>About Me</h2>
       <p>I'm a recent B.Tech graduate in Computer Science Engineering with a specialization in Artificial Intelligence and Machine Learning. Passionate about solving real-world problems using data-driven approaches, I’m actively seeking opportunities in AI, Data Science, and Software Development. I enjoy building intelligent systems and continuously learning new technologies to stay ahead in the tech world.</p>
@@ -45,7 +64,7 @@
     </div>
   </section>
 
-  <section id="skills">
+  <section id="skills" data-aos="fade-up">
     <div class="card">
       <h2>Skills & Tools</h2>
       <ul>
@@ -60,7 +79,7 @@
     </div>
   </section>
 
-  <section id="education">
+  <section id="education" data-aos="fade-up">
     <div class="card">
       <h2>Education</h2>
       <p><strong>B.Tech in Computer Science Engineering (AIML)</strong><br>
@@ -68,7 +87,7 @@
     </div>
   </section>
 
-  <section id="certifications">
+  <section id="certifications" data-aos="fade-up">
     <div class="card">
       <h2>Certifications</h2>
       <ul>
@@ -78,10 +97,9 @@
     </div>
   </section>
 
-  <section id="projects">
+  <section id="projects" data-aos="fade-up">
     <div class="card">
       <h2>Projects</h2>
-
       <h3>IPL Match Winner Prediction using Machine Learning</h3>
       <p>Predicted IPL match outcomes using machine learning models trained on historical match data, player statistics, and team performance metrics. Focused on feature engineering, data pre-processing, and model optimization to enhance predictive accuracy.</p>
 
@@ -91,11 +109,10 @@
       <h3>Capstone Project: Netflix Recommendation System using Apriori Algorithm</h3>
       <p><strong>Duration:</strong> December 2024 – March 2025</p>
       <p>Developed a recommendation system that suggests movies by mining user viewing patterns with the Apriori algorithm. Focused on extracting frequent item sets and generating association rules using Python.</p>
-
     </div>
   </section>
 
-  <section id="contact">
+  <section id="contact" data-aos="fade-up">
     <div class="card">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:sathwikmuppa@gmail.com">sathwikmuppa@gmail.com</a></p>
@@ -116,5 +133,9 @@
   <footer>
     <p>© 2025 Sathwik Reddy Muppa | All Rights Reserved</p>
   </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>AOS.init();</script>
 </body>
 </html>
+
